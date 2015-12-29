@@ -1,0 +1,5 @@
+Logstash SpamHaus Filter
+Copyright 2015-2015 Wedjaa Inc
+
+This product includes software developed by The Apache Software
+Foundation (http://www.apache.org/).
