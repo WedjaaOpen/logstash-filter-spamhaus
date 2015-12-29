@@ -32,6 +32,16 @@ The filter accepts the following configuration options:
   * `tag_blacklisted` - The tag to add to the event in case the IP is blacklisted. *Default: `spamhaus_blacklisted`*.
   * `tag_whitelisted` - The tag to add to the event in case the IP is not in any blacklist. *Default: `spamhaus_whitelisted`*.
 
+A more involved filter configuration could look like:
+
+```
+  spamhaus {
+    ip => 'client_ip'
+    tag_blacklisted => 'blacklisted'
+    tag_whitelisted => 'whitelisted'
+  }
+```
+
 ## Missing functionality
 
 This is a bare minimum implementation of the filter. Some things could be good to implement:
