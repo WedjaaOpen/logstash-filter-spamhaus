@@ -26,7 +26,7 @@ class LogStash::Filters::SpamHaus < LogStash::Filters::Base
 
     if @ip
       lookupip = event[@ip]
-      if lookupip
+      if lookupip && lookupip =~ /^(\d{1,3}[\.]{0,1}){4}$/
 	event['tags'] ||= [] 
 	result = Charon.query lookupip
 	if result
