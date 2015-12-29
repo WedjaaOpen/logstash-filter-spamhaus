@@ -1,6 +1,7 @@
 Gem::Specification.new do |s|
   s.name = 'logstash-filter-spamhaus'
-  s.version         = '1.0.0'
+#  s.platform = 'java'
+  s.version = '1.0.0'
   s.licenses = ['Apache License (2.0)']
   s.summary = "This filter will lookup a given IP in the SpamHaus ZEN list and populate the event with the information found on the list."
   s.description = "This gem is a logstash plugin required to be installed on top of the Logstash core pipeline using $LS_HOME/bin/plugin install gemname. This gem is not a stand-alone program"
@@ -20,5 +21,5 @@ Gem::Specification.new do |s|
   # Gem dependencies
   s.add_runtime_dependency "logstash-core", ">= 2.0.0", "< 3.0.0"
   s.add_runtime_dependency "charon", "~> 1.0"
-  s.add_development_dependency 'logstash-devutils'
+  s.add_development_dependency 'logstash-devutils', '>= 0.0.18'
 end

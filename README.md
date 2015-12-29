@@ -49,3 +49,31 @@ This is a bare minimum implementation of the filter. Some things could be good t
   * Lookup multiple IPs
   * Select the blacklists to lookup
 
+## Compiling and testing
+
+Compiling, deploying and testing this plugin requires JRuby. Not only - you want to make sure that the bundle, rake and rspec commands are run using JRuby.
+
+If you start seeing errors that look like:
+
+```
+Could not find gem 'logstash-devutils (>= 0.0.18) ruby' in any of the gem sources listed in your Gemfile or available on this machine.
+```
+
+*notice the `ruby` bit after the version* - try and make it explicit that you want to use the JRuby versions of the commands:
+
+```
+alias rspec="jruby -S rspec"
+alias rake="jruby -S rake"
+alias bundle="jruby -S bundle"
+```
+
+Once you specified these aliases things should start working as expected -- unless you don't have jruby in your path.
+
+Test it our by running `bundle install && bundle exec rspec` - it should produce some output, ending with the test results:
+
+```
+Finished in 0.382 seconds (files took 4.03 seconds to load)
+2 examples, 0 failures
+
+Randomized with seed xxxxx
+```
